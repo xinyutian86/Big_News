@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>注册界面</title>
+		<script type="text/javascript">
+			function check(){
+				if(form.username.value==""){
+					alert("学号不能为空");
+					form.username.focus();
+					return false;
+				}
+				if(form.password.value==""){
+					alert("密码不能为空");
+					form.password.focus();
+					return false;
+				}
+				if(form.password2.value!=form.password.value){
+					alert("两次输入的密码不相同");
+					form.password2.focus();
+					return false;
+				}
+			}
+		</script>
+		<link href="../css/login.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div id="login">
+			<h1 align="center">用户注册</h1>
+			<form name="form" action="../jsp/register.jsp" method="post" onsubmit="return check()">
+				<input type="text" required="required" placeholder="用户名" name="username"></input>  
+            	<input type="password" required="required" placeholder="密码" name="password"></input>  
+            	<input type="password" required="required" placeholder="确认密码" name="password2"></input>  
+            	<button class="but" type="submit">注册</button>  
+		</form>
+		</div>
+		
+	</body>
+</html>
